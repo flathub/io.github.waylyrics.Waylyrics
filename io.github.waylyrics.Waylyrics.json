@@ -56,7 +56,12 @@
             {
                 "type": "file",
                 "url": "https://raw.githubusercontent.com/waylyrics/waylyrics/v0.3.5/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml",
-                "sha256": "8649dd6d0ac46bdc48165ded9bac2afadf1434e420ede0b2dc75334f0403e179"
+                "sha256": "8649dd6d0ac46bdc48165ded9bac2afadf1434e420ede0b2dc75334f0403e179",
+                "x-checker-data": {
+                    "type": "anitya",
+                    "project-id": 372139,
+                    "url-template": "https://raw.githubusercontent.com/waylyrics/waylyrics/v$version/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml"
+                }
             },
             "cargo-sources.json"
         ]
