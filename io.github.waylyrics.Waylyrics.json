@@ -3,7 +3,9 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
-    "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable"],
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
     "command": "waylyrics",
     "finish-args": [
         "--socket=wayland",
@@ -17,53 +19,50 @@
     "build-options": {
         "append-path": "/usr/lib/sdk/rust-stable/bin"
     },
-    "modules": [{
-        "name": "waylyrics",
-        "buildsystem": "simple",
-        "build-options": {
-            "env": {
-                "CARGO_HOME": "/run/build/waylyrics/cargo"
-            }
-        },
-        "build-commands": [
-            "cargo --offline fetch --manifest-path Cargo.toml --verbose",
-            "WAYLYRICS_THEME_PRESETS_DIR=/app/share/waylyrics/themes/ cargo --offline build --release --verbose",
-            "install -Dm755 ./target/release/waylyrics -t /app/bin/",
-            "install -Dm644 metainfo/io.github.waylyrics.Waylyrics.desktop -t /app/share/applications/",
-            "install -Dm644 metainfo/io.github.waylyrics.Waylyrics.gschema.xml -t /app/share/glib-2.0/schemas/",
-            "glib-compile-schemas /app/share/glib-2.0/schemas/",
-            "install -Dm644 themes/*.css -t /app/share/waylyrics/themes/",
-            "for locale in locales/*/LC_MESSAGES/waylyrics.po; do \
-                echo \"Installing locale ${locale}...\" \
-                mo=${locale/#locales\//} \
-                mo=${mo/%.po/.mo} \
-                msgfmt ${locale} -o - | install -Dm644 /dev/stdin /app/share/locale/${mo} \
-            done",
-            "cp -r res/icons/ /app/share/",
-            "install -Dm644 io.github.waylyrics.Waylyrics.metainfo.xml -t /app/share/metainfo/"
-        ],
-        "sources": [
-            {
-                "type": "archive",
-                "url": "https://github.com/waylyrics/waylyrics/archive/refs/tags/v0.3.8.tar.gz",
-                "sha256": "7bd25ea50c55dbb294b7f903281bc597b82af473a482b88004692250b2889fd8",
-                "x-checker-data": {
-                    "type": "anitya",
-                    "project-id": 372139,
-                    "url-template": "https://github.com/waylyrics/waylyrics/archive/refs/tags/v$version.tar.gz"
+    "modules": [
+        {
+            "name": "waylyrics",
+            "buildsystem": "simple",
+            "build-options": {
+                "env": {
+                    "CARGO_HOME": "/run/build/waylyrics/cargo"
                 }
             },
-            {
-                "type": "file",
-                "url": "https://raw.githubusercontent.com/waylyrics/waylyrics/v0.3.8/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml",
-                "sha256": "83b0de3e5c7e7a933737526c0bedcd0b3552f28e9831db2c6b051e2480139ebe",
-                "x-checker-data": {
-                    "type": "anitya",
-                    "project-id": 372139,
-                    "url-template": "https://raw.githubusercontent.com/waylyrics/waylyrics/v$version/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml"
-                }
-            },
-            "cargo-sources.json"
-        ]
-    }]
+            "build-commands": [
+                "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+                "WAYLYRICS_THEME_PRESETS_DIR=/app/share/waylyrics/themes/ cargo --offline build --release --verbose",
+                "install -Dm755 ./target/release/waylyrics -t /app/bin/",
+                "install -Dm644 metainfo/io.github.waylyrics.Waylyrics.desktop -t /app/share/applications/",
+                "install -Dm644 metainfo/io.github.waylyrics.Waylyrics.gschema.xml -t /app/share/glib-2.0/schemas/",
+                "glib-compile-schemas /app/share/glib-2.0/schemas/",
+                "install -Dm644 themes/*.css -t /app/share/waylyrics/themes/",
+                "for locale in locales/*/LC_MESSAGES/waylyrics.po; do \n                echo \"Installing locale ${locale}...\" \n                mo=${locale/#locales//} \n                mo=${mo/%.po/.mo} \n                msgfmt ${locale} -o - | install -Dm644 /dev/stdin /app/share/locale/${mo} \n            done",
+                "cp -r res/icons/ /app/share/",
+                "install -Dm644 io.github.waylyrics.Waylyrics.metainfo.xml -t /app/share/metainfo/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/waylyrics/waylyrics/archive/refs/tags/v0.3.9.tar.gz",
+                    "sha256": "cd43322b4ee53fdc3de42612415391862839e9b2440ba5f15f6d85c0c7366546",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 372139,
+                        "url-template": "https://github.com/waylyrics/waylyrics/archive/refs/tags/v$version.tar.gz"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/waylyrics/waylyrics/v0.3.9/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml",
+                    "sha256": "3de1f810b38eadacdfa07a00e6950c3885301f9af97f711ea9dc05e36d50c51a",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 372139,
+                        "url-template": "https://raw.githubusercontent.com/waylyrics/waylyrics/v$version/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml"
+                    }
+                },
+                "cargo-sources.json"
+            ]
+        }
+    ]
 }
