@@ -29,6 +29,7 @@
                 }
             },
             "build-commands": [
+                "python3 ./flatpak-cargo-generator.py Cargo.lock -o cargo-sources.json",
                 "cargo --offline fetch --manifest-path Cargo.toml --verbose",
                 "WAYLYRICS_THEME_PRESETS_DIR=/app/share/waylyrics/themes/ cargo --offline build --release --verbose",
                 "install -Dm755 ./target/release/waylyrics -t /app/bin/",
@@ -61,7 +62,11 @@
                         "url-template": "https://raw.githubusercontent.com/waylyrics/waylyrics/v$version/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml"
                     }
                 },
-                "cargo-sources.json"
+                {
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/refs/heads/master/cargo/flatpak-cargo-generator.py",
+                    "sha256": "be155d00839c781c5d3176891facab2e5b3a423e88c73c7799a6b7e5d3a3786d"
+                }
             ]
         }
     ]
