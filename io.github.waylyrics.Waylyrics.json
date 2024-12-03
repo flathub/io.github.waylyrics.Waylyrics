@@ -15,7 +15,7 @@
         "--share=network",
         "--talk-name=org.mpris.MediaPlayer2.*",
         "--talk-name=org.kde.StatusNotifierWatcher",
-        "--own-name=io.github.waylyrics.Waylyrics-*"
+        "--own-name=io.github.waylyrics.*"
     ],
     "build-options": {
         "append-path": "/usr/lib/sdk/rust-stable/bin"
