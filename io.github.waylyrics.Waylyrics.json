@@ -53,8 +53,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://raw.githubusercontent.com/waylyrics/waylyrics/v0.3.21/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml",
-                    "sha256": "5314f9f1f05d706fb31370800c47290fff185ace0d7999944bd7fa60bd27ed50",
+                    "url": "https://raw.githubusercontent.com/waylyrics/waylyrics/master/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml",
+                    "sha256": "309ef0e75ae89ae5d1227b3add722db7e24acc5dcec769af8937a3d2e5a04e0f",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 372139,
