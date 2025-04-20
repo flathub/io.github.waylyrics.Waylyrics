@@ -36,11 +36,11 @@
                 "install -Dm644 metainfo/io.github.waylyrics.Waylyrics.gschema.xml -t /app/share/glib-2.0/schemas/",
                 "glib-compile-schemas /app/share/glib-2.0/schemas/",
                 "install -Dm644 themes/*.css -t /app/share/waylyrics/themes/",
-                "for locale in locales/*/LC_MESSAGES/waylyrics.po; do \n                echo \"Installing locale ${locale}...\" \n                mo=${locale/#locales//} \n                mo=${mo/%.po/.mo} \n                msgfmt ${locale} -o - | install -Dm644 /dev/stdin /app/share/locale/${mo} \n            done",
+                "for locale in locales/*/LC_MESSAGES/waylyrics.po; do mo=${locale/#locales//}; mo=${mo/%.po/.mo}; msgfmt ${locale} -o - | install -Dm644 /dev/stdin /app/share/locale/${mo}; done",
                 "cp -r res/icons/ /app/share/",
                 "install -Dm644 io.github.waylyrics.Waylyrics.metainfo.xml -t /app/share/metainfo/"
             ],
-            "sources": [
+	    "sources": [
                 {
                     "type": "archive",
                     "url": "https://github.com/waylyrics/waylyrics/archive/refs/tags/v0.3.21.tar.gz",
