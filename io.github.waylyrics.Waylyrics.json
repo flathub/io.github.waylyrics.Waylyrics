@@ -25,12 +25,13 @@
             "buildsystem": "simple",
             "build-options": {
                 "env": {
-                    "CARGO_HOME": "/run/build/waylyrics/cargo"
+                    "CARGO_HOME": "/run/build/waylyrics/cargo",
+                    "WAYLYRICS_THEME_PRESETS_DIR": "/app/share/waylyrics/themes"
                 }
             },
             "build-commands": [
                 "cargo --offline fetch --manifest-path Cargo.toml --verbose",
-                "WAYLYRICS_THEME_PRESETS_DIR=/app/share/waylyrics/themes/ cargo --offline build --release --verbose",
+                "cargo --offline build --release --verbose",
                 "install -Dm755 ./target/release/waylyrics -t /app/bin/",
                 "install -Dm644 metainfo/io.github.waylyrics.Waylyrics.desktop -t /app/share/applications/",
                 "install -Dm644 metainfo/io.github.waylyrics.Waylyrics.gschema.xml -t /app/share/glib-2.0/schemas/",
