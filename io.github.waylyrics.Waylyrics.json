@@ -44,8 +44,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/waylyrics/waylyrics/archive/refs/tags/v0.4.3.tar.gz",
-                    "sha256": "e016bc2a8b14e78789b915da1d35d34e98145c302ae48ae8020b9a840c1bbea9",
+                    "url": "https://github.com/waylyrics/waylyrics/archive/refs/tags/v0.4.5.tar.gz",
+                    "sha256": "f77118b3f2ca0f7c5ed0572173303f3fbe6973026d507748f26dd81a7c34bf47",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 372139,
@@ -54,8 +54,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://raw.githubusercontent.com/waylyrics/waylyrics/v0.4.3/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml",
-                    "sha256": "52d504177bd903c6e8bef4825a4a014e7937f5a2ff27ce4866abca7c2cf5d9e3",
+                    "url": "https://raw.githubusercontent.com/waylyrics/waylyrics/v0.4.5/metainfo/io.github.waylyrics.Waylyrics.metainfo.xml",
+                    "sha256": "3def46d9c0c0ec91aa0476ee62f0da387e041912c58447b6cca1b8ad7a42ec1f",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 372139,
